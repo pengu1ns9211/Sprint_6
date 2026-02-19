@@ -24,3 +24,6 @@ class OrderPageLocators:
     ORDER_BTN = (By.XPATH, "//div[contains(@class,'Order_Buttons')]//button[text()='Заказать']")
     YES_BTN = (By.XPATH, "//button[text()='Да']")
     ORDER_SUCCESS_WINDOW = (By.XPATH, "//div[contains(@class, 'Order_ModalHeader')]")
+
+    YANDEX_LOGO = (By.XPATH, "//a[contains(@class, 'Header_LogoYandex')]")
+    SAMOKAT_LOGO = (By.XPATH, "//a[contains(@class, 'Header_LogoScooter')]")

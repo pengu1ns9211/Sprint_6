@@ -74,3 +74,11 @@ class OrderPage(BasePage):
         self.click_order_button()
         self.confirm_order()
         return self.check_order_success()
+
+@allure.step('Клик на логотип Самоката')
+def click_samokat_logo(self):
+    self.click_to_element(OrderPageLocators.SAMOKAT_LOGO)
+
+@allure.step('Клик на логотип Яндекса')
+def click_yandex_logo(self):
+    self.click_to_element(OrderPageLocators.YANDEX_LOGO)

@@ -42,3 +42,26 @@ class TestOrderCreation:
         success_message = order_page.create_order(order_data, order_data)
         
         assert 'Заказ оформлен' in success_message, 'Сообщение об успешном заказе не появилось'
+
+
+  class TestHeaderLogo:
+
+    @allure.title('Клик на логотип "Самокат" на странице заказа возвращает на главную')
+    def test_samokat_logo_redirect_from_order(self, driver):
+        order_page = OrderPage(driver)
+        home_page = HomePage(driver)
+
+        order_page.open_order_page()
+        order_page.click_samokat_logo()  # Этот метод нужно добавить!
+
+        assert home_page.get_current_url() == Urls.HOME_PAGE
+
+    @allure.title('Клик на логотип "Яндекс" на странице заказа открывает Дзен')
+    def test_yandex_logo_redirect_from_order(self, driver):
+        order_page = OrderPage(driver)
+
+        order_page.open_order_page()
+        order_page.click_yandex_logo()  # Этот метод нужно добавить!
+        order_page.switch_to_new_tab()
+
+        assert Urls.DZEN_DOMAIN in order_page.get_current_url()

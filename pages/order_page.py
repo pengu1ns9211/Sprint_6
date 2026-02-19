@@ -2,7 +2,7 @@ import allure
 from selenium.webdriver import Keys
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
-
+from utils.urls import Urls
 
 class OrderPage(BasePage):
 

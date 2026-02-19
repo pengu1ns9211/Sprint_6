@@ -7,6 +7,10 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step("Ожидание содержания URL")
+    def wait_url_contains(self, text):
+        WebDriverWait(self.driver, 10).until(expected_conditions.url_contains(text))
+
     @allure.step("Открытие URL")
     def open_url(self, url):
         self.driver.get(url)
